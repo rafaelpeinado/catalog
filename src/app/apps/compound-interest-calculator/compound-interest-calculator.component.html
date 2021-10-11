@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="row g-3 needs-validation" [formGroup]="formCICalculator">
+                <div class="col-12">
+                  <div class="form-outline">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="initialValue"
+                      value="0"
+                      (change)="teste()"
+                      formControlName="initialValue"
+                      required
+                    />
+                    <label for="initialValue" class="form-label">Valor Inicial</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-outline">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="monthlyContribution"
+                        value="0"
+                        (change)="teste()"
+                        formControlName="monthlyContribution"
+                        required
+                      />
+                      <label for="monthlyContribution" class="form-label">Aporte Mensal</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-outline">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="monthlyInterestRate"
+                        value="0"
+                        (change)="teste()"
+                        formControlName="monthlyInterestRate"
+                        required
+                      />
+                      <label for="monthlyInterestRate" class="form-label">Taxa Mensal</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-outline">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="numberMonths"
+                        value="0"
+                        (change)="teste()"
+                        formControlName="numberMonths"
+                        required
+                      />
+                      <label for="numberMonths" class="form-label">Meses</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <p>result: {{ result | currency: 'BRL' }}</p>
+            <p>soma aplicações: {{ totalContribution | currency: 'BRL' }}</p>
+            <p>total juros: {{ accruedInterest | currency: 'BRL' }}</p>
+        </div>
+    </div>
+</div>
